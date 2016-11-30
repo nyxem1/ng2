@@ -1,0 +1,48 @@
+{
+  "name": "angular-quickstart",
+  "version": "1.0.0",
+  "description": "ng2 seed with webpack",
+  "scripts": {
+    "start": "webpack-dev-server --inline --progress --port 4000",
+    "test": "karma start",
+    "build": "rimraf prod && webpack --config --progress --profile --bail"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@angular/common": "~2.2.0",
+    "@angular/compiler": "~2.2.0",
+    "@angular/core": "~2.2.0",
+    "@angular/forms": "~2.2.0",
+    "@angular/http": "~2.2.0",
+    "@angular/platform-browser": "~2.2.0",
+    "@angular/platform-browser-dynamic": "~2.2.0",
+    "@angular/router": "~3.2.0",
+    "core-js": "^2.4.1",
+    "reflect-metadata": "^0.1.8",
+    "rxjs": "5.0.0-beta.12",
+    "zone.js": "^0.6.26"
+  },
+  "devDependencies": {
+    "@types/node": "^6.0.46",
+    "canonical-path": "0.0.2",
+    "concurrently": "^3.1.0",
+    "http-server": "^0.9.0",
+    "lite-server": "^2.2.2",
+    "typescript": "^2.0.10",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-merge": "^0.14.0",
+
+    "rimraf": "^2.5.2",
+    "angular2-template-loader": "^0.4.0",
+    "awesome-typescript-loader": "^2.2.4",
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
+    "html-loader": "^0.4.3",
+    "html-webpack-plugin": "^2.15.0"
+  },
+  "repository": {}
+}
