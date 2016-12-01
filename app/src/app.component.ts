@@ -1,7 +1,26 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import { RestService } from './shared/testData.service';
+import { TestModel } from './models/test.model';
+import { APIBaseConfig } from './shared/app.configurations';
 
 @Component({
   selector: 'my-app',
-  template: `<h1>Hello {{name}}</h1>`,
+  template: ``,
+  providers: [RestService, APIBaseConfig]
 })
-export class AppComponent  { name = 'Angular'; }
+
+export class AppComponent  implements OnInit{
+  public testItems: TestModel[];
+
+  constructor(private _testService: RestService){}
+
+  ngOnInit(){
+    this.getTestData();
+  }
+
+  private getTestData(): void{
+    this._testService.getTestData().subscribe((data:TestModel[]) => this.testItems = data,
+      error => console.log(error),
+        () => console.log('Successfully fetched data'));
+  }
+}
