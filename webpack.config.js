@@ -1,5 +1,5 @@
 var path = require('path');
-var _root = path.resolve(__dirname, '..');
+var _root = path.resolve(__dirname, '');
 
 var webpack = require('webpack');
 
@@ -10,12 +10,12 @@ var webpackMerge = require('webpack-merge');
 
 module.exports = webpackMerge({
     entry: {
-        'vendor': './app/src/vendor.ts',
-        'app': './app/src/app.ts'
+        'vendor': './app/vendor/vendor.ts',
+        'app': './app/src/main.ts'
     },
     output: {
-        path: root('prod'),
-        publicPath: 'http://localhost:4000/',
+        path: root('public'),
+        publicPath: 'http://localhost:8000/',
         filename: '[name].js',
         chunkFilename: '[id].chunk.js'
     },
@@ -36,17 +36,13 @@ module.exports = webpackMerge({
                 loader: 'html'
             },
             {
-                test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
-                loader: 'file?name=assets/[name].[hash].[ext]'
-            },
-            {
                 test: /\.css$/,
-                exclude: root('src', 'app'),
+                exclude: root('app', 'src'),
                 loader: ExtractTextPlugin.extract('style', 'css?sourceMap')
             },
             {
                 test: /\.css$/,
-                include: root('src', 'app'),
+                include: root('app', 'src'),
                 loader: 'raw'
             }
         ]
@@ -71,5 +67,6 @@ module.exports = webpackMerge({
 // helper functions
 function root(args) {
     args = Array.prototype.slice.call(arguments, 0);
+    console.log('this is ' + path.join.apply(path, [_root].concat(args)));
     return path.join.apply(path, [_root].concat(args));
 }

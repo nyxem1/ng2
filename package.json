@@ -3,13 +3,12 @@
   "version": "1.0.0",
   "description": "ng2 seed with webpack",
   "scripts": {
-    "start": "webpack-dev-server --inline --progress --port 4000",
-    "test": "karma start",
+    "start": "webpack-dev-server --inline --progress --port 8000",
     "build": "rimraf prod && webpack --config --progress --profile --bail"
   },
   "keywords": [],
-  "author": "",
-  "license": "MIT",
+  "author": "rahul",
+  "license": "",
   "dependencies": {
     "@angular/common": "~2.2.0",
     "@angular/compiler": "~2.2.0",
