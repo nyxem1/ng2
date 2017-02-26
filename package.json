@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "ng2 seed with webpack",
   "scripts": {
-    "start": "webpack-dev-server --inline --progress --port 8000",
+    "start": "webpack-dev-server --inline --progress --watch --port 8000",
     "build": "rimraf prod && webpack --config --progress --profile --bail"
   },
   "keywords": [],
