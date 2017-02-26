@@ -20,7 +20,7 @@ export class AppComponent  implements OnInit{
 
   private getTestData(): void{
     this._testService.getTestData().subscribe((data:TestModel[]) => this.testItems = data,
-      error => console.log(error),
-        () => console.log('Successfully fetched data'));
+      error => console.log(error),            //error
+        () => console.log(this.testItems));  //success
   }
 }

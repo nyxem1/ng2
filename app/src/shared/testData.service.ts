@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {  Http, Response, Headers, RequestOptions, RequestOptionsArgs } from '@angular/http';
+import { Http, Response, Headers, RequestOptions, RequestOptionsArgs } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import { TestModel } from '../models/test.model';
 import { APIBaseConfig } from '../shared/app.configurations';
@@ -11,8 +11,7 @@ export class RestService {
 
     constructor(private _http: Http, private _apiBaseConfig: APIBaseConfig){
         this.url = _apiBaseConfig.rest_endpoint;
-
-        this.headers = new Headers();
+        this.headers  = new Headers();
         this.headers.append('Content-Type', 'application/json');
         this.headers.append('Accept', 'application/json');
     }
@@ -24,8 +23,7 @@ export class RestService {
     }
 
     private handleError(error: Response) {
-        console.error(error);
-        return Observable.throw(error.json().error || 'Server error');
+        return Observable.throw(error.json() + 'Server error');
     }
 
     private prepareOptions = (options: RequestOptionsArgs): RequestOptionsArgs => {
